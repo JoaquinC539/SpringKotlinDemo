@@ -8,7 +8,13 @@ import jakarta.persistence.Id
 @Entity
 data class Vendedor(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0,
+    var id: Long = 0L,
     var nombre: String = "",
     var codigoEmpleado: String = ""
-)
+) {
+    companion object {
+        fun test() {
+            println("test")
+        }
+    }
+}

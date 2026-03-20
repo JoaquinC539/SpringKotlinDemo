@@ -23,6 +23,11 @@ class PlaygroundController {
         val resl = listOf(user1, user2)
         val res = mapOf("usersc" to resl, "employee" to employee)
         var vend = Vendedor()
+        val a = 1
+        Vendedor.test()
+        if (a.equals(1)) {
+            throw Exception("Dev test exception")
+        }
         return ResponseEntity.ok().body(res);
 
     }
