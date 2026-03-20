@@ -3,6 +3,8 @@ plugins {
 	kotlin("plugin.spring") version "2.3.20"
 	id("org.springframework.boot") version "4.0.3"
 	id("io.spring.dependency-management") version "1.1.7"
+	id("org.jetbrains.kotlin.plugin.jpa") version "2.3.20"
+
 }
 
 group = "com.kotlind"

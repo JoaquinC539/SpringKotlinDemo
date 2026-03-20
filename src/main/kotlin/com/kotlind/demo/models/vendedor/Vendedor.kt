@@ -8,7 +8,7 @@ import jakarta.persistence.Id
 @Entity
 data class Vendedor(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
-    val nombre: String = "",
-    val codigoEmpleado: String = ""
+    var id: Long = 0,
+    var nombre: String = "",
+    var codigoEmpleado: String = ""
 )
