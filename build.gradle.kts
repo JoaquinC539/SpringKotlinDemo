@@ -35,6 +35,10 @@ dependencies {
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	// Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa:4.0.3")
+	// Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
+	implementation("org.springframework.boot:spring-boot-starter-validation:4.0.4")
+	// Source: https://mvnrepository.com/artifact/org.springframework/spring-webflux
+	implementation("org.springframework:spring-webflux:7.0.6")
 }
 
 kotlin {
