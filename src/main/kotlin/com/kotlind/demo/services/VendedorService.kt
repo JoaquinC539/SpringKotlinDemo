@@ -9,5 +9,5 @@ interface VendedorService {
 
     fun getAllVendedores(): List<Vendedor>
 
-    fun getVendedor(id: Int): Vendedor
+    fun getVendedor(id: Long): Vendedor
 }

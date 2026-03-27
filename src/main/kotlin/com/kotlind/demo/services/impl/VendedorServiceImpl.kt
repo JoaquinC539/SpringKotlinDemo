@@ -30,14 +30,14 @@ class VendedorServiceImpl : VendedorService {
     }
 
 
-    @Transactional(rollbackOn = [Exception::class])
+    @Transactional(rollbackOn = [AppException::class, Exception::class])
     override fun addVendedor(vendedor: Vendedor): Vendedor {
         try {
             log.info("Insertando vendedor: {}", vendedor.nombre)
             var strBuilder = StringBuilder()
             var i = 0
             val chars = ('a'..'z').joinToString("") + "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            while (i < 13) {
+            while (i < 20) {
                 val rand = chars.random()
                 strBuilder.append(rand)
                 i++
@@ -52,12 +52,13 @@ class VendedorServiceImpl : VendedorService {
     }
 
     override fun getAllVendedores(): List<Vendedor> {
+
         return vendedorRepository.findAll()
     }
 
-    override fun getVendedor(id: Int): Vendedor {
+    override fun getVendedor(id: Long): Vendedor {
         log.info("Venedor id $id")
-        return vendedorRepository.findVendedorById(id.toLong()) ?: throw AppException("Empty result")
+        return vendedorRepository.findVendedorById(id) ?: throw AppException("Empty vendedor result")
 
     }
 }

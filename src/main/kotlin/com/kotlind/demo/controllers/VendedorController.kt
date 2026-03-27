@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-@RestController()
+@RestController
 @RequestMapping("vendedor")
 class VendedorController {
 
@@ -31,7 +31,7 @@ class VendedorController {
     }
 
     @GetMapping("/{id}")
-    fun getVendedor(@PathVariable id: Int): ResponseEntity<Vendedor> {
+    fun getVendedor(@PathVariable id: Long): ResponseEntity<Vendedor> {
         return ResponseEntity.ok().body(vendedorService.getVendedor(id))
     }
 

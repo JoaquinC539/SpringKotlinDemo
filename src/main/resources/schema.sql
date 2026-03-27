@@ -9,6 +9,7 @@ CREATE TABLE vendedor (
 CREATE TABLE producto (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
+    codigo_producto VARCHAR(20) UNIQUE,
     precio DOUBLE NOT NULL
 );
 
