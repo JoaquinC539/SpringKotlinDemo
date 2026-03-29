@@ -8,5 +8,5 @@ interface VentaService {
 
     fun getVentasRaw(): List<Venta>
 
-    fun getVentas(): List<VentaDto>
+    fun getVentas(total: Double?, cantidad: Int?, vendedorId: Long?, productoId: Long?): List<VentaDto>
 }

@@ -33,7 +33,6 @@ class VendedorServiceImpl : VendedorService {
     @Transactional(rollbackOn = [AppException::class, Exception::class])
     override fun addVendedor(vendedor: Vendedor): Vendedor {
         try {
-            log.info("Insertando vendedor: {}", vendedor.nombre)
             var strBuilder = StringBuilder()
             var i = 0
             val chars = ('a'..'z').joinToString("") + "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

@@ -18,6 +18,7 @@ data class VentaDto(
     var vendedorCodigo: String = "",
     var productoId: Long = 0L,
     var productoCodigo: String = "",
+    var produtoNombre: String = "",
     var productoPrecio: Double = 0.0,
     var cantidad: Int = 0,
     var fecha: LocalDateTime?,

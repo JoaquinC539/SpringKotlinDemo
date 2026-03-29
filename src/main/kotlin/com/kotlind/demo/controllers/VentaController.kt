@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -26,8 +27,13 @@ class VentaController(private val ventaService: VentaService) {
     }
 
     @GetMapping
-    fun getVentaData(): ResponseEntity<List<VentaDto>> {
-        return ResponseEntity.ok().body(ventaService.getVentas())
+    fun getVentaData(
+        @RequestParam(required = false) total: Double?,
+        cantidad: Int?,
+        vendedorId: Long?,
+        productoId: Long?,
+    ): ResponseEntity<List<VentaDto>> {
+        return ResponseEntity.ok().body(ventaService.getVentas(total, cantidad, vendedorId, productoId))
     }
 
 

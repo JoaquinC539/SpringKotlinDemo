@@ -35,9 +35,9 @@ class VentaServiceImpl(
         return ventaRepository.findAll()
     }
 
-    override fun getVentas(): List<VentaDto> {
+    override fun getVentas(total: Double?, cantidad: Int?, vendedorId: Long?, productoId: Long?): List<VentaDto> {
         try {
-            return ventaRepository.findVentaData()
+            return ventaRepository.findVentaData(total, cantidad, vendedorId, productoId)
         } catch (e: Exception) {
             throw AppException("Error ocurred at getting venta data: ${e.message}")
         }

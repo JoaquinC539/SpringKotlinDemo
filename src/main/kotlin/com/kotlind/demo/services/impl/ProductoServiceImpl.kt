@@ -42,7 +42,6 @@ class ProductoServiceImpl(private val productoRepository: ProductoRepository) : 
 
     override fun getProducto(id: Long): Producto {
         try {
-            log.info("Producto id: $id")
             return productoRepository.findVendedorById(id) ?: throw AppException("Producto not found with id $id")
         } catch (e: Exception) {
             throw AppException("An error ocurred at getting Producto ${e.message}")
